@@ -15,6 +15,11 @@ PASSWORD_USER = ''
 
 client = Client(account_sid, auth_token)
 
+#PhoneNumbers
+TWILIO_NUM = ' '
+MY_NUM = ' '
+
+
 driver = webdriver.Chrome()
 
 driver.get(
@@ -84,9 +89,9 @@ while not cover:
                     ("cover" in b) or ("today" in b) or ("tonight" in b) or ("tomorrow" in b)):
                 print("shift2")
                 message = client.messages.create(
-                    from_='+12512374403',
+                    from_=TWILIO_NUM,
                     body='shift open, check the band app',
-                    to='+15597362064'
+                    to=MY_NUM
                 )
                 textbox.send_keys("I can cover" )
             else:
